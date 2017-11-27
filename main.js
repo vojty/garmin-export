@@ -23,6 +23,6 @@ if (!program.email || !program.password) {
 api.login(program.email, program.password).then(() => {
     api.loadAllActivities().then((activities) => {
         const data = JSON.stringify(activities, null, 2);
-        fs.writeFileSync(path.join(__dirname, 'activities.json'), data);
+        fs.writeFileSync(path.join(__dirname, 'output/activities.json'), data);
     });
 });
